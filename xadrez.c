@@ -1,49 +1,60 @@
 #include <stdio.h>
 
-// Jogo de xadrez
-int main(){
+void recursivo(int torre){
+    if (torre > 0)
+    {
+        recursivo(torre - 1);
+        printf("Direita \n", torre);
+
+    }
     
-    int rainha = 0;
-    int cavalo, CavaloL;
-//Movimento da torre
-    printf("Primeira peça a se movimentar é a torre! \n");
-    for (int torre = 0; torre < 5; torre++)
+}
+
+void recursivo1(int bispo) {
+    if (bispo > 0)
     {
-        printf("Direita \n");
+        recursivo1(bispo - 1);
+        printf("Cima e Direita \n", bispo);
     }
-//Movimento do bispo
-    printf("Proxima peça a se mover é o bispo! \n");
-    for (int bispo = 0; bispo < 5; bispo++)
+    
+}
+
+void recursivo2(int rainha) {
+    if (rainha > 0)
     {
-        printf("Cima e direita \n");
+        recursivo2(rainha - 1);
+        printf("Esquerda \n", rainha);
+        
     }
-//Movimento da rainha
-    printf("Proxima peça a se mover é a rainha! \n");
+    
+}
+
+void recursivo3(int cavalo) {
+    if (cavalo > 0)
+    {
+        recursivo3(cavalo - 1);
+        printf("Duas casas horizontais depois direita");
+    }
+    
+}
 
 
-    while (rainha < 8)
-    {
-        if (rainha < 8)
-        {
-            printf("Esquerda! \n"); 
-            
-        }
-        
-        rainha ++;
-    }
-//Movimento do cavalo
-    printf("Proxima peça a se mover é o cavalo! \n");
-    for (cavalo = 1; cavalo <= 1; cavalo++)
-    {
-        
-        while (CavaloL <= 1)
-        {
-            printf("Horizontal \n");
-            CavaloL++;
-        }
-        
-        printf("Esquerda\n");
-    }
+int main() {
+
+    int movimento = 4;
+    int movimento1 = 4;
+    int movimento2 = 7;
+    int movimento3 = 1;
+
+    printf("Movimento da Torre... \n");
+    recursivo(movimento);
+    printf("Movimento do bispo ...\n");
+    recursivo1(movimento1);
+    printf("Movimento da rainha... \n");
+    recursivo2(movimento2);
+    printf("Movimento do cavalo... \n");
+    recursivo3(movimento3);
+
 
     return 0;
 
